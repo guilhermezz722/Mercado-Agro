@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Mercado Agro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="imagens/logo.png" alt="Logo do Mercado Agro" class="logo">
+            <h1>Mercado Agro</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Cadastro</a></li>
+                <li><a href="profile.html">Perfil</a></li>
+                <li><a href="add_product.html">Adicionar Produto</a></li>
+                <li><a href="informacoes.html">Sobre Nós e Contato</a></li>
+                <li><a href="cart.html" class="cart-icon">Carrinho (<span id="cart-badge">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="imagem-fundo"> 
+    <main>
+        <div class="login-container">
+            <div class="login-form">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" name="loginEmail" required>
+
+                    <label for="loginSenha">Senha:</label>
+                    <input type="password" id="loginSenha" name="loginSenha" required>
+
+                    <button type="submit">Entrar</button>
+                </form>
+                <div class="form-footer">
+                    <p>Não tem uma conta? <a href="register.html">Cadastre-se</a></p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+    
+   
+
+    <script src="script.js"></script>
+</body>
+</html>

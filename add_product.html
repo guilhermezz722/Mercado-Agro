@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Produto - Mercado Agro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="imagens/logo.png" alt="Logo do Mercado Agro" class="logo">
+            <h1>Mercado Agro</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Cadastro</a></li>
+                <li><a href="profile.html">Perfil</a></li>
+                <li><a href="add_product.html">Adicionar Produto</a></li>
+                <li><a href="informacoes.html">Sobre Nós e Contato</a></li>
+                <li><a href="cart.html">Carrinho</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="add-product-container">
+            <div class="add-product-form">
+                <h2>Adicionar Produto</h2>
+                <form id="add-product-form">
+                    <div class="form-group">
+                        <label for="product-name">Nome do Produto:</label>
+                        <input type="text" id="product-name" name="product-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-image">Imagem do Produto:</label>
+                        <input type="file" id="product-image" name="product-image" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-price">Preço:</label>
+                        <input type="number" id="product-price" name="product-price" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-quantity">Quantidade:</label>
+                        <input type="number" id="product-quantity" name="product-quantity" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-unit">Unidade:</label>
+                        <select id="product-unit" name="product-unit" required>
+                            <option value="kg">kg</option>
+                            <option value="unidade">unidade</option>
+                            <option value="litro">litro</option>
+                        </select>
+                    </div>
+                    <button type="submit">Adicionar Produto</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+   
+    <script src="script.js"></script>
+</body>
+</html>

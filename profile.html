@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Mercado Agro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="imagens/logo.png" alt="Logo do Mercado Agro" class="logo">
+            <h1>Mercado Agro</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Cadastro</a></li>
+                <li><a href="profile.html">Perfil</a></li>
+                <li><a href="add_product.html">Adicionar Produto</a></li>
+                <li><a href="informacoes.html">Sobre Nós e Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="profile-container">
+            <div class="profile-card">
+                <h2>Perfil do Usuário</h2>
+                <div class="profile-info">
+                    <label for="profileImage">Imagem de Perfil:</label>
+                    <img id="profileImage" src="imagens/perfil.png" alt="Imagem de Perfil" class="image-preview">
+                    
+                    <label for="profileName">Nome Completo:</label>
+                    <p id="profileName">João da Silva</p>
+                    
+                    <label for="profileEmail">Email:</label>
+                    <p id="profileEmail">joao.silva@example.com</p>
+                </div>
+                
+                <button id="editProfileBtn">Editar Perfil</button>
+            </div>
+        </section>
+    </main>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

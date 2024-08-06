@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - Mercado Agro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="imagens/logo.png" alt="Logo do Mercado Agro" class="logo">
+            <h1>Mercado Agro</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Cadastro</a></li>
+                <li><a href="profile.html">Perfil</a></li>
+                <li><a href="add_product.html">Adicionar Produto</a></li>
+                <li><a href="informacoes.html">Sobre Nós e Contato</a></li>
+                <li><a href="cart.html">Carrinho</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cart-container">
+            <h2>Seu Carrinho</h2>
+            <div id="cart-items"></div>
+            <div class="cart-summary">
+                <h2>Resumo do Carrinho</h2>
+                <p>Total de Itens: <span id="total-items">0</span></p>
+                <p>Total: R$<span id="total-price">0.00</span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mercado Agro. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Função para carregar o carrinho
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.querySelector('#cart-items');
+            const totalItems = document.querySelector('#total-items');
+            const totalPrice = document.querySelector('#total-price');
+
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="cart-item-details">
+                        <h3>${item.name}</h3>
+                        <p>Preço: R$${item.price.toFixed(2)}</p>
+                        <p>Quantidade: ${item.quantity} ${item.unit}</p>
+                        <button class="remove-from-cart-btn" data-index="${index}">Remover</button>
+                    </div>
+                `;
+
+                cartItemsContainer.appendChild(cartItem);
+                total += item.price * item.quantity;
+            });
+
+            totalItems.textContent = cart.length;
+            totalPrice.textContent = total.toFixed(2);
+
+            // Adiciona listener para remover itens do carrinho
+            document.querySelector('#cart-items').addEventListener('click', function(event) {
+                if (event.target.classList.contains('remove-from-cart-btn')) {
+                    const index = event.target.dataset.index;
+                    removeFromCart(index);
+                }
+            });
+        }
+
+        // Função para remover um item do carrinho
+        function removeFromCart(index) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        window.addEventListener('load', loadCart);
+    </script>
+</body>
+</html>
